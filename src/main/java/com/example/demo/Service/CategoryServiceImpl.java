@@ -11,9 +11,16 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService{
     @Autowired
     CategoryRepo repo;
+
+
     @Override
     public Category create(Category category) {
         return repo.save(category);
+    }
+
+    @Override
+    public List<Category> getAll(){
+        return repo.findAll();
     }
 
     @Override
@@ -24,6 +31,11 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public void delete(Long id) {
     repo.deleteById(id);
+    }
+
+    @Override
+    public Category getById(Long id) {
+        return repo.findById(id).get();
     }
 
 

@@ -15,6 +15,7 @@ import java.util.Properties;
 public class MainBootstrap implements ApplicationRunner {
     @Autowired
     ItemRepo itemRepo;
+    @Autowired
     CategoryRepo categoryRepo;
     @Override
     public void run(ApplicationArguments args) throws Exception {

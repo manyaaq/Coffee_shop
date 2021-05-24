@@ -11,7 +11,7 @@ public class Order {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)//+
     @JoinColumn(name = "order_id")
     private Set<Item> items;
 
